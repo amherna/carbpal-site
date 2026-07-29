@@ -177,6 +177,15 @@ li + li {
   max-width: 700px;
 }
 
+.app-store-badge-link {
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+.app-store-badge-link img {
+  display: block;
+}
+
 .button-links {
   display: flex;
   flex-wrap: wrap;
