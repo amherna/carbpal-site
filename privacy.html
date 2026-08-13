@@ -39,7 +39,7 @@
           <li><strong>Account information:</strong> email address, account identifier, and authentication information.</li>
           <li><strong>Profile settings:</strong> profile name or nickname, carb-ratio references, time-of-day labels, and app preferences.</li>
           <li><strong>Meal information:</strong> saved foods, serving descriptions, carb entries, carb totals, meal notes, favorites, and meal history.</li>
-          <li><strong>LabelLens scans:</strong> a Nutrition Facts photo selected by the user and the structured nutrition values extracted from it.</li>
+          <li><strong>LabelLens scan results:</strong> editable nutrition values extracted on the device. CarbPal does not collect or upload the selected photo.</li>
           <li><strong>Optional log information:</strong> an insulin amount manually entered by the user for personal recordkeeping.</li>
           <li><strong>Subscription information:</strong> product, entitlement, purchase, renewal, expiration, and restore status.</li>
           <li><strong>Support and usage information:</strong> messages sent to support and limited technical information needed to operate, secure, and troubleshoot the app.</li>
@@ -63,7 +63,6 @@
         </p>
         <ul>
           <li><strong>Supabase:</strong> account authentication and related backend or database services, where enabled.</li>
-          <li><strong>OpenAI:</strong> Nutrition Facts image processing for LabelLens when the user chooses to scan a label.</li>
           <li><strong>RevenueCat:</strong> subscription entitlement and purchase-status management.</li>
           <li><strong>Apple App Store:</strong> payment processing, receipts, subscription billing, renewal, cancellation, and purchase restoration.</li>
         </ul>
@@ -72,10 +71,9 @@
           payment-card information from Apple.
         </p>
         <p>
-          LabelLens sends the selected image through a CarbPal Supabase Edge Function to OpenAI. The image is processed
-          to return structured nutrition values, is not added to meal history, and is not permanently stored by CarbPal.
-          OpenAI API data controls are configured not to store the model response. Users must review extracted values
-          before adding carbohydrates to the Carb Log.
+          On iPhone and iPad, LabelLens uses Apple Vision to read the selected Nutrition Facts image on the device. The
+          image is not uploaded, added to meal history, or stored by CarbPal. Users must review extracted values before
+          adding carbohydrates to the Carb Log.
         </p>
 
         <h2>Medical and health-related entries</h2>
